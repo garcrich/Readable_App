@@ -1,0 +1,30 @@
+//Fonts
+$body-font: "Source Sans Pro", sans-serif;
+$header-font: "Oswald", sans-serif;
+
+//Oswald:600,700|Source+Sans+Pro:300i,400
+
+$h-xl: 3.00em;
+$h-lg: 2.50em;
+$h-md: 2.00em;
+$h-sm: 1.50em;
+
+$navbar-width: 12em;
+
+$p-md: 1.17em;
+$date-sm: 0.83em;
+
+//colors
+$dark-blue: #202b7f;
+$blue: #3444cc;
+$post-green: #27c246;
+$edit-orange:  #ee9148;
+$delete-red: #ff3434;
+
+h1,h2,h3 {
+    font-family: $header-font;
+}
+
+p{
+    font-family: $body-font
+}

@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    margin-left: $navbar-width;
+    height: 8em;
+    h1 {
+        margin-left:  .6em;
+        align-self: center;
+        font-size: $h-xl;
+        font-variant: small-caps;
+    }
+}
+

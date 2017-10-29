@@ -1,0 +1,39 @@
+.form {
+    
+    h1 {
+        margin-bottom: 0.4em;
+    }
+    
+    textarea {
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    input {
+        border-radius: 5px;
+    }
+    
+}
+
+.form input, .form textarea {
+    width: 250px;
+    padding: 6px 8px;
+    border: none;
+    border: $dark-blue 3px solid;
+    margin-bottom: 1em;
+    font-style: $body-font;
+    font-size: $p-md;
+}
+
+
+.form-buttons {
+    margin-top: 1em;
+    .form-post{
+        margin-right: 0.8em;
+        border: none;
+    }
+    
+    .form-cancel {
+        border: none;
+    }
+}

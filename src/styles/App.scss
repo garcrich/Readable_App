@@ -1,0 +1,28 @@
+@import "./base/reset";
+@import "./base/settings";
+@import "./base/global-classes";
+@import "./components/comment";
+@import "./components/comment-header";
+@import "./components/header";
+@import "./components/main-area";
+@import "./components/nav-bar";
+@import "./components/topic-form";
+@import "./components/topics-options";
+
+.lg-header,.md-header,.sm-header {
+  font-family: $header-font;
+  color: #fff;
+}
+
+.primary-color {
+  background-color: $dark-blue;
+}
+
+.secondary-color {
+  background-color: $blue;
+}
+
+p {
+  font-family: $body-font;
+}
+

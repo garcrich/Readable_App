@@ -1,0 +1,27 @@
+.nav {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  width: $navbar-width;
+  
+  h1 {
+    align-self: center;
+    font-size: $h-md;
+    font-variant: small-caps;
+  }
+  
+  ul {
+    align-self: center;
+    font-size: $h-sm;
+    padding-right: .5em;
+    li {
+      margin-top: 1em;
+    }
+  }
+
+  .logo {
+    align-self: center;
+    padding: 1.5em 0 2em
+  }
+}

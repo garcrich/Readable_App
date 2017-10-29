@@ -1,0 +1,94 @@
+.com-block {
+    margin: 0.7em 0 0 0;
+    display: flex;
+    justify-content: flex-start;
+    .h1 {
+        font-size: 1.8em;
+    }
+}
+
+
+
+
+.com-col-1 {
+    font-family: $body-font;
+    width: 100px;
+    align-self: center;
+    text-align: center;
+    .up-button{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 14px 20px 14px;
+        border-color: transparent transparent #3444cc transparent;
+    }
+    .down-button {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 20px 14px 0 14px;
+        border-color: #3444cc transparent transparent transparent;
+    }
+    .down-button:active {
+        border-color: darken(#3444cc, 8%) transparent transparent transparent;
+    }
+
+    .up-button:active {
+        border-color: transparent transparent darken(#3444cc, 8%) transparent;
+    }
+
+    p {
+        padding: 30px 0 32px;
+        font-family: $header-font;
+        color: $dark-blue;
+    }
+}
+
+.com-col-2 {
+    //background-color:peru;
+    align-self: center;
+    max-width: 450px;
+    h3 {
+        font-family: $header-font;
+        font-size: $h-sm;
+        color: $dark-blue;
+        margin-bottom: .5em;
+
+    }
+    
+    p {
+        font-family: $body-font;
+        margin-bottom: .4em;
+    }
+
+    small {
+        font-family: $body-font;
+        font-weight: 300;
+        font-style: italic;
+    }
+}
+
+hr {
+    background-color: $blue;
+    padding: 1px;
+    max-width: 650px;
+    margin: 1.2em 0;
+}
+
+.comment-name {
+    margin: 0 0 .3em;
+    color: $dark-blue;
+    font-size: $h-md;
+    font-variant: small-caps;
+    font-family: $header-font;  
+}
+
+.comment-edit-btn--margin {
+    margin-left: 6.1em;
+}
+
+.comment-padding {
+    .h1{
+        padding-left: 3em;
+    }
+}
