@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './styles/App.css';
 import Navbar from './components/Nav';
 import Header from './components/Header';
-import MainArea from './components/MainArea'
+import TopicsOptions from './components/TopicsOptions';
+import AllCatagories from './components/AllCatagories';
+import SingleTopic from './components/SingleTopic';
+import TopicForm from './components/TopicForm';
+
+
+const CategoriesPage = () => (
+  <div>
+  <Navbar />
+  <Header />
+  <main className="main">
+
+      <Route path ="/categories" component={TopicsOptions} />
+      <Route exact path="/categories" component={AllCatagories} />
+      <Route path="/categories/something-else" component={SingleTopic} />
+      <Route path="/categories/something" component={TopicForm} />
+      <Route path="/topic-form" component={TopicForm}/>
+      <Route path="/single-topic" component={SingleTopic}/>
+  </main>
+</div>
+);
 
 class App extends Component {
   render() {
     return (
       <div className="content">
-      <Navbar/>
-      <Header/>
-      <MainArea/>
-    </div>
+        <BrowserRouter>
+          <Route path="/" component={CategoriesPage} />
+        </BrowserRouter>
+      </div>
     );
   }
 }

@@ -28,3 +28,14 @@ h1,h2,h3 {
 p{
     font-family: $body-font
 }
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.active {
+    color: lighten($blue, 30%);
+    text-decoration: none;
+}

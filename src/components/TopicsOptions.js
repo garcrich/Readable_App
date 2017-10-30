@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TopicsOptions extends React.Component {
     render() {
@@ -11,7 +12,9 @@ class TopicsOptions extends React.Component {
                     <option>option 1</option>
                     <option>option 2</option>
                 </select>
-                <button className="btn btn-post">post topic</button>
+                <Link to={"/topic-form"}>
+                <button className="btn btn-post">post {this.props.postType}</button>
+                </Link>
             </div>
         )
     }

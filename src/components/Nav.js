@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 class Navbar extends React.Component {
@@ -11,10 +12,26 @@ class Navbar extends React.Component {
             
                 <h1 className="lg-header">Categories</h1>
                 <ul className="md-header">
-                    <li>all</li>
-                    <li>react</li>
-                    <li>redux</li>
-                    <li>udacity</li>
+                    <li>
+                        <NavLink exact activeClassName='active' to="/categories">
+                            all                    
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact activeClassName='active' to="/categories/react">
+                            react                    
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact activeClassName='active' to="/categories/redux">
+                            redux                    
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact activeClassName='active' to="/categories/udacity">
+                            udacity                    
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
         )

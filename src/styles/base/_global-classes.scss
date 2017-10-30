@@ -42,6 +42,14 @@
     background-color: darken($edit-orange, 5%);
 }
 
+.btn-cancel {
+    background-color: $delete-red;
+}
+
+.btn-cancel:active {
+    background-color: darken($delete-red, 5%);
+}
+
 .btn-delete {
     width: 1.9em;
     height:1.9em;

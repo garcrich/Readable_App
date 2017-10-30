@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Topic extends React.Component {
     render() {
@@ -12,8 +13,9 @@ class Topic extends React.Component {
                     </a>
                 </div>
                 <div className="com-col-2">
-                    <h3>React is the cat's meow</h3>
-                    
+                    <Link to="/single-topic">
+                        <h3>React is the cat's meow</h3>
+                    </Link>
                     <p>I just can’t contain my love for  react. It’s truely amazing. I was able to save my marriage because of React.js. Honestly, who else can say that?  Just kidding,I’m sure hundreds of devs can. #NotSponsored</p>
                     <small>Oct. 14 2017 3:53p.m.</small>
                 </div>

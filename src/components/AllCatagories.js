@@ -6,7 +6,6 @@ class AllCatagories extends React.Component {
     render() {
         return (
             <div>
-                <TopicsOptions sortItem="Today's Topics"/>
                 <Topic/>
                 <Topic/>
                 <Topic/>

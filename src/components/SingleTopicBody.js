@@ -22,7 +22,7 @@ class SingleTopicBody extends React.Component {
                 <div className="edit-topic comment-edit-btn--margin">
                     <button className="btn btn-edit">edit topic</button>
                 </div>
-                <hr class="comment-spacer" />
+                <hr className="comment-spacer" />
                 <TopicsOptions sortItem="Comments" />
                 <CommentBlock />
             </div>

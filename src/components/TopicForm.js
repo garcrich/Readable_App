@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TopicForm extends React.Component {
     render() {
@@ -11,8 +12,11 @@ class TopicForm extends React.Component {
                 <h1 className="h1">Body</h1>
                 <textarea/>
                 <div className="form-buttons">
-                    <button className="form-post">post</button>
-                    <button className="form-cancel">cancel</button>
+                    <button className="btn btn-post form-post">post</button>
+
+                    <Link to="/categories">
+                    <button className="btn btn-cancel">cancel</button>
+                    </Link>
                 </div>
                 </form>
         )
