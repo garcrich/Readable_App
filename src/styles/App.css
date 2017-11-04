@@ -271,6 +271,22 @@ hr {
     padding: 5px;
     border-radius: 2px; }
 
+.welcome-screen {
+  width: 26em; }
+
+.welcome-header {
+  display: flex;
+  justify-content: center; }
+
+.welcome-options {
+  display: flex;
+  justify-content: center; }
+
+.welcome-options button {
+  display: block;
+  margin: 1.5em 0.7em 0;
+  font-size: 1.5em; }
+
 .lg-header, .md-header, .sm-header {
   font-family: "Oswald", sans-serif;
   color: #fff; }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/App.css';
 import Navbar from './components/Nav';
 import Header from './components/Header';
@@ -7,6 +7,8 @@ import TopicsOptions from './components/TopicsOptions';
 import AllCatagories from './components/AllCatagories';
 import SingleTopic from './components/SingleTopic';
 import TopicForm from './components/TopicForm';
+import WelcomeScreen from './components/WelcomeScreen';
+
 
 
 const CategoriesPage = () => (
@@ -14,7 +16,7 @@ const CategoriesPage = () => (
   <Navbar />
   <Header />
   <main className="main">
-
+      <Route exact path="/" component={WelcomeScreen} />
       <Route path ="/categories" component={TopicsOptions} />
       <Route exact path="/categories" component={AllCatagories} />
       <Route path="/categories/something-else" component={SingleTopic} />

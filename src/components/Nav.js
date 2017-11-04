@@ -1,39 +1,69 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 class Navbar extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            categories: [],
+            postUnfilteredDetails: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch(
+            "http://localhost:3001/categories",
+            {
+                method: 'GET',
+                headers: { 'Authorization': 'super-secure-authorization' }
+            })
+            .then(results => {
+                return results.json()
+            })
+            .then((responseData) => {
+                let categories = responseData.categories
+                //console.log(...categories);
+                this.setState({
+                    categories: [...categories]
+                })
+            })
+    }
+
     render() {
         return (
+
             <nav className="nav primary-color">
                 <div className="logo">
-                    <img src={logo} width="100"alt="Logo "/>
+                    <Link to="/">
+                        <img src={logo} width="100" alt="Logo " />
+                    </Link>
                 </div>
-            
+
                 <h1 className="lg-header">Categories</h1>
                 <ul className="md-header">
                     <li>
                         <NavLink exact activeClassName='active' to="/categories">
-                            all                    
+                            all
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink exact activeClassName='active' to="/categories/react">
-                            react                    
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink exact activeClassName='active' to="/categories/redux">
-                            redux                    
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink exact activeClassName='active' to="/categories/udacity">
-                            udacity                    
-                        </NavLink>
-                    </li>
+
+                {this.state.categories.map((catagory) => {
+                    return (
+                        <li key={catagory.name}>
+                            <NavLink exact activeClassName='active' to={"/categories/" + catagory.name}>
+                                {catagory.name}
+                            </NavLink>
+                        </li>
+                        )
+                    })
+                }
+
                 </ul>
             </nav>
+            
         )
     }
 }
