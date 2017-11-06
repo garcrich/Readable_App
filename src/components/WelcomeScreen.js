@@ -27,7 +27,6 @@ class WelcomeScreen extends React.Component {
             })
             .then((responseData) => {
                 let postUnfilteredDetails = responseData
-                //console.log(...postUnfilteredDetails);
                 this.setState({
                     postUnfilteredDetails: [...postUnfilteredDetails]
                 })
@@ -37,8 +36,6 @@ class WelcomeScreen extends React.Component {
 
 
     render() {
-        console.log(this.state.categories)
-        console.log(this.state.postUnfilteredDetails)
 
         return (
             <div className="welcome-screen">

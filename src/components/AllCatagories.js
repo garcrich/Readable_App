@@ -1,6 +1,6 @@
 import React from 'react';
-import TopicsOptions from './TopicsOptions';
 import Topic from './Topic.js';
+import { withRouter } from 'react-router';
 
 class AllCatagories extends React.Component {
 
@@ -9,12 +9,11 @@ class AllCatagories extends React.Component {
 
         this.state = {
             postUnfilteredDetails: [],
+            categories: []
         };
     }
 
-
     componentDidMount() {
-
         fetch(
             "http://localhost:3001/posts",
             {
@@ -26,25 +25,52 @@ class AllCatagories extends React.Component {
             })
             .then((responseData) => {
                 let postUnfilteredDetails = responseData
-                console.log(...postUnfilteredDetails);
+                //console.log(...postUnfilteredDetails);
                 this.setState({
                     postUnfilteredDetails: [...postUnfilteredDetails]
                 })
             })
+
+            fetch(
+                "http://localhost:3001/categories",
+                {
+                    method: 'GET',
+                    headers: { 'Authorization': 'super-secure-authorization' }
+                })
+                .then(results => {
+                    return results.json()
+                })
+                .then((responseData) => {
+                    let categories = responseData.categories
+                    this.setState({
+                        categories: [...categories]
+                    })
+                })
     }
 
     render() {
-        console.log(this.state.postUnfilteredDetails)
+
+        console.log((this.props.location.pathname).replace(/\/categories\//,''))
         return (
             <div>
-            {this.state.postUnfilteredDetails.map((data) => {
+
+            
+            {
+                this.props.location.pathname === "/categories" ?
+                this.state.postUnfilteredDetails.map((data) => {
                     return (
-                        <div key={data.id}>
-                            <Topic title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
-                        </div>
+                            <Topic key={data.id} id={data.id} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
                     )
-                })
-            }
+                }) :
+            (this.state.postUnfilteredDetails).filter((data) => {
+                return data.category === (this.props.location.pathname).replace(/\/categories\//,'')
+            })
+            .map((data) => {
+                return (
+                    <Topic key={data.id} id={data.id} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
+            )
+            })}
+
             </div>
         )
     }

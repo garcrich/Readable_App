@@ -16,9 +16,9 @@ const CategoriesPage = () => (
   <Navbar />
   <Header />
   <main className="main">
-      <Route exact path="/" component={WelcomeScreen} />
-      <Route path ="/categories" component={TopicsOptions} />
-      <Route exact path="/categories" component={AllCatagories} />
+      <Route exact path="/" component={WelcomeScreen} />      
+      <Route path ="/categories" render={(props) => (<TopicsOptions postType="topic"/>)} />
+      <Route path="/categories" component={AllCatagories} />
       <Route path="/categories/something-else" component={SingleTopic} />
       <Route path="/categories/something" component={TopicForm} />
       <Route path="/topic-form" component={TopicForm}/>

@@ -8,7 +8,7 @@ class SingleTopicBody extends React.Component {
             <div>
                 <div className="com-block">
                     <div className="com-col-1">
-                        <a className="up-button">
+                        <a className="up-button ">
                         </a>
                         <p>12</p>
                         <a className="down-button">
@@ -23,7 +23,7 @@ class SingleTopicBody extends React.Component {
                     <button className="btn btn-edit">edit topic</button>
                 </div>
                 <hr className="comment-spacer" />
-                <TopicsOptions sortItem="Comments" />
+                <TopicsOptions sortItem="Comments" postType="comment" />
                 <CommentBlock />
             </div>
         )

@@ -8,8 +8,7 @@ class Navbar extends React.Component {
         super(props);
 
         this.state = {
-            categories: [],
-            postUnfilteredDetails: [],
+            categories: []
         };
     }
 
@@ -25,7 +24,6 @@ class Navbar extends React.Component {
             })
             .then((responseData) => {
                 let categories = responseData.categories
-                //console.log(...categories);
                 this.setState({
                     categories: [...categories]
                 })
@@ -49,10 +47,9 @@ class Navbar extends React.Component {
                             all
                         </NavLink>
                     </li>
-
                 {this.state.categories.map((catagory) => {
                     return (
-                        <li key={catagory.name}>
+                        <li className={catagory.path} key={catagory.name} >
                             <NavLink exact activeClassName='active' to={"/categories/" + catagory.name}>
                                 {catagory.name}
                             </NavLink>
