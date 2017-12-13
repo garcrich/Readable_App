@@ -15,11 +15,12 @@ class Topic extends React.Component {
                     </a>
                 </div>
                 <div className="com-col-2">
-                    <Link to="/single-topic">
+                    <Link to={`/posts/${this.props.id}`}>
                         <h3>{this.props.title}</h3>
                     </Link>
                     <p>{this.props.body}</p>
-                    <small>{Moment(this.props.timeStamp).format('MMMM Do H:mm a')}</small>
+                    <p><small>{Moment(this.props.timeStamp).format('MMMM Do H:mm a')}</small></p>
+                    <p><small>Comments: {this.props.commentCount}</small></p>
                 </div>
             </div>
         )

@@ -10,7 +10,6 @@ import TopicForm from './components/TopicForm';
 import WelcomeScreen from './components/WelcomeScreen';
 
 
-
 const CategoriesPage = () => (
   <div>
   <Navbar />
@@ -19,7 +18,7 @@ const CategoriesPage = () => (
       <Route exact path="/" component={WelcomeScreen} />      
       <Route path ="/categories" render={(props) => (<TopicsOptions postType="topic"/>)} />
       <Route path="/categories" component={AllCatagories} />
-      <Route path="/categories/something-else" component={SingleTopic} />
+      <Route path="/posts/" component={SingleTopic} />
       <Route path="/categories/something" component={TopicForm} />
       <Route path="/topic-form" component={TopicForm}/>
       <Route path="/single-topic" component={SingleTopic}/>

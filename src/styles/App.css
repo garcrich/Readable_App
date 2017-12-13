@@ -59,6 +59,15 @@ a {
   color: #aeb5eb;
   text-decoration: none; }
 
+html {
+  min-height: 100%;
+  /* make sure it is at least as tall as the viewport */
+  position: relative; }
+
+body {
+  height: 100%;
+  /* force the BODY element to match the height of the HTML element */ }
+
 .h1 {
   font-size: "Oswald", sans-serif;
   font-size: 2em;
@@ -209,8 +218,14 @@ hr {
   position: absolute;
   display: flex;
   flex-flow: column;
-  height: 100vh;
-  width: 12em; }
+  height: 100%;
+  width: 12em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1; }
   .nav h1 {
     align-self: center;
     font-size: 2em;
@@ -220,7 +235,7 @@ hr {
     font-size: 1.5em;
     padding-right: .5em; }
     .nav ul li {
-      margin-top: 1em; }
+      margin: 1em; }
   .nav .logo {
     align-self: center;
     padding: 1.5em 0 2em; }

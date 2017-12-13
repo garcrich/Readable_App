@@ -1,6 +1,7 @@
 import React from 'react';
 import TopicsOptions from './TopicsOptions';
 import CommentBlock from './CommentBlock';
+import Moment from 'moment';
 
 class SingleTopicBody extends React.Component {
     render() {
@@ -8,15 +9,15 @@ class SingleTopicBody extends React.Component {
             <div>
                 <div className="com-block">
                     <div className="com-col-1">
-                        <a className="up-button ">
+                        <a className={`up-button up-${this.props.id}`}>
                         </a>
-                        <p>12</p>
-                        <a className="down-button">
+                        <p>{this.props.voteScore}</p>
+                        <a className={`down-button down-${this.props.id}`}>
                         </a>
                     </div>
                     <div className="com-col-2">
-                        <p>I just can’t contain my love for  react. It’s truely amazing. I was able to save my marriage because of React.js. Honestly, who else can say that?  Just kidding,I’m sure hundreds of devs can. #NotSponsored</p>
-                        <small>Oct. 14 2017 3:53p.m.</small>
+                        <p>{this.props.body}</p>
+                        <small>{Moment(this.props.timeStamp).format('MMMM Do H:mm a')}</small>
                     </div>
                 </div>
                 <div className="edit-topic comment-edit-btn--margin">

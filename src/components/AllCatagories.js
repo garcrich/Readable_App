@@ -30,27 +30,11 @@ class AllCatagories extends React.Component {
                     postUnfilteredDetails: [...postUnfilteredDetails]
                 })
             })
-
-            fetch(
-                "http://localhost:3001/categories",
-                {
-                    method: 'GET',
-                    headers: { 'Authorization': 'super-secure-authorization' }
-                })
-                .then(results => {
-                    return results.json()
-                })
-                .then((responseData) => {
-                    let categories = responseData.categories
-                    this.setState({
-                        categories: [...categories]
-                    })
-                })
     }
 
     render() {
 
-        console.log((this.props.location.pathname).replace(/\/categories\//,''))
+        //console.log((this.props.location.pathname).replace(/\/categories\//,''))
         return (
             <div>
 
@@ -59,7 +43,7 @@ class AllCatagories extends React.Component {
                 this.props.location.pathname === "/categories" ?
                 this.state.postUnfilteredDetails.map((data) => {
                     return (
-                            <Topic key={data.id} id={data.id} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
+                            <Topic key={data.id} id={data.id} commentCount={data.commentCount} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
                     )
                 }) :
             (this.state.postUnfilteredDetails).filter((data) => {
@@ -67,7 +51,7 @@ class AllCatagories extends React.Component {
             })
             .map((data) => {
                 return (
-                    <Topic key={data.id} id={data.id} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
+                    <Topic key={data.id} id={data.id} commentCount={data.commentCount} title={data.title} body={data.body} timeStamp={data.timestamp} voteScore={data.voteScore}/>
             )
             })}
 
